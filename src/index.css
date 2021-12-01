@@ -1,1 +1,5 @@
 @import './tailwind.css';
+
+section {
+  height: max(800px, 100vh);
+}
