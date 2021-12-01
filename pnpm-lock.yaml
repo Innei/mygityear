@@ -3,12 +3,14 @@ lockfileVersion: 5.3
 specifiers:
   '@innei-util/eslint-config-react-ts': ^0.1.2
   '@innei-util/prettier': ^0.1.3
+  '@types/lodash-es': 4.17.5
   '@types/react': 17.0.20
   '@vitejs/plugin-react-refresh': 1.3.6
   autoprefixer: 10.3.4
   eslint: 7.32.0
   husky: 7.0.2
   lint-staged: 11.1.2
+  lodash-es: 4.17.21
   postcss: 8.3.6
   postcss-nested: 5.0.6
   prettier: 2.4.0
@@ -21,12 +23,14 @@ specifiers:
   vite-tsconfig-paths: 3.3.14
 
 dependencies:
+  lodash-es: 4.17.21
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
 
 devDependencies:
   '@innei-util/eslint-config-react-ts': 0.1.2_eslint@7.32.0+typescript@4.4.3
   '@innei-util/prettier': 0.1.3_prettier@2.4.0+typescript@4.4.3
+  '@types/lodash-es': 4.17.5
   '@types/react': 17.0.20
   '@vitejs/plugin-react-refresh': 1.3.6
   autoprefixer: 10.3.4_postcss@8.3.6
@@ -409,6 +413,16 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=}
+    dev: true
+
+  /@types/lodash-es/4.17.5:
+    resolution: {integrity: sha512-SHBoI8/0aoMQWAgUHMQ599VM6ZiSKg8sh/0cFqqlQQMyY9uEplc0ULU5yQNzcvdR4ZKa0ey8+vFmahuRbOCT1A==}
+    dependencies:
+      '@types/lodash': 4.14.177
+    dev: true
+
+  /@types/lodash/4.14.177:
+    resolution: {integrity: sha512-0fDwydE2clKe9MNfvXHBHF9WEahRuj+msTuQqOmAApNORFvhMYZKNGGJdCzuhheVjMps/ti0Ak/iJPACMaevvw==}
     dev: true
 
   /@types/parse-json/4.0.0:
@@ -1896,6 +1910,10 @@ packages:
       p-locate: 2.0.0
       path-exists: 3.0.0
     dev: true
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
 
   /lodash.clonedeep/4.5.0:
     resolution: {integrity: sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=}

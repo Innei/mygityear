@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from 'react'
 import { getRandomArbitrary } from '../../utils'
+import { debounce } from 'lodash-es'
 import styles from './index.module.css'
 
 const defaultColors = [
@@ -19,7 +20,7 @@ export const Background: React.FC = () => {
     const repeatColor = (() => {
       const arr: string[] = []
       let i = 0
-      while (i++ < 8) {
+      while (i++ < 4) {
         arr.push(...defaultColors)
       }
       return arr.sort(() => Math.random() - 0.5)
@@ -60,12 +61,14 @@ export const Background: React.FC = () => {
     }, 0)
     timer = setInterval(animate, 5000)
 
+    window.addEventListener('resize', debounce(animate, 500))
+
     return () => {
       timer = clearInterval(timer)
     }
   }, [animate])
   return (
-    <div className={styles['root']}>
+    <div className={`${styles['root']} bg`}>
       {colorElements.map((c, i) => (
         <div
           className={styles['circle']}
@@ -87,7 +90,7 @@ export const Background: React.FC = () => {
 function pointRandomize(height: number, width: number) {
   const decision = (height + width) / 4
   return {
-    diameter: getRandomArbitrary(decision * 0.25, decision * 0.75),
+    diameter: getRandomArbitrary(decision * 0.5, decision * 1),
     offsetX: getRandomArbitrary(-width / 2, +width),
     offsetY: getRandomArbitrary(-height / 2, +height),
   }
