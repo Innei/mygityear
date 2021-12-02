@@ -7,7 +7,7 @@ interface TextEffectProps {
   suffix?: string
   pauseTime?: number
   repeat?: boolean
-
+  pause?: boolean
   tag?: keyof JSX.IntrinsicElements
 }
 export const TextEffect: React.FC<
@@ -20,6 +20,7 @@ export const TextEffect: React.FC<
     textSpeed = 100,
     repeat = true,
     tag = 'h1',
+    pause = false,
     ...rest
   } = props
 
@@ -30,7 +31,15 @@ export const TextEffect: React.FC<
 
   const [currentText, setCurrentText] = React.useState('')
   const currentTextIndex = React.useRef(0)
-  const timer = React.useRef<number>()
+  const timer = React.useRef<any>()
+  useEffect(() => {
+    if (pause) {
+      timer.current = clearTimeout(timer.current)
+    } else {
+      animate()
+    }
+  }, [pause])
+
   const animate = useCallback(() => {
     setCurrentText((currentText) => {
       // Transform to array to solve emoji split into two characters
@@ -68,8 +77,14 @@ export const TextEffect: React.FC<
   }, [pauseTime, repeat, textArray, textSpeed])
 
   useEffect(() => {
+    if (pause) {
+      // 开局就暂停, 显示第一句
+      setCurrentText(textArray[currentTextIndex.current])
+      return
+    }
     const timer = setTimeout(animate, textSpeed)
     return () => clearTimeout(timer)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [animate, textSpeed])
 
   useEffect(() => {

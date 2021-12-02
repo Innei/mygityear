@@ -1,0 +1,33 @@
+.part1 {
+  & .arrow-down {
+    animation: float 3s infinite ease-in-out;
+  }
+}
+
+@keyframes float {
+  0% {
+    transfrom: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+section {
+  &:global {
+    &.container {
+      @apply max-w-[800px] m-auto py-[20vh] flex flex-col items-center justify-center relative bg-bg-black;
+      @apply bg-clip-content overflow-hidden;
+
+      & > div {
+        @apply px-4 pt-2 rounded-xl overflow-hidden;
+      }
+    }
+  }
+}
+
+.part2 {
+}

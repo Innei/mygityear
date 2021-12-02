@@ -1,6 +1,9 @@
+import clsx from 'clsx'
 import { shuffle } from 'lodash-es'
 import React from 'react'
-import { TextEffect } from '../text-effect'
+import { IcBaselineKeyboardArrowDown } from '../components/icons/arrow-down'
+import { TextEffect } from '../components/text-effect'
+import styles from './index.module.css'
 
 const mainTitleTextList = ['我和我的代码，还有这一年。'].concat(
   shuffle([
@@ -15,7 +18,7 @@ const mainTitleTextList = ['我和我的代码，还有这一年。'].concat(
 )
 export const Part1 = () => {
   return (
-    <section>
+    <section className={styles['part1']}>
       <div
         className="flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-mono
       text-3xl font-bold
@@ -25,7 +28,16 @@ export const Part1 = () => {
           className="break-all"
           textArray={mainTitleTextList}
           repeat
+          pause={import.meta.env.DEV}
         ></TextEffect>
+      </div>
+
+      <div
+        className={clsx(
+          'absolute left-1/2 -translate-x-1/2 top-[80vh] text-xl',
+        )}
+      >
+        <IcBaselineKeyboardArrowDown className={styles['arrow-down']} />
       </div>
     </section>
   )

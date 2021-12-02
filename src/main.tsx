@@ -1,7 +1,8 @@
 import React, { FC } from 'react'
 import ReactDOM from 'react-dom'
 import { Background } from './components/background'
-import { Part1 } from './components/sections/part1'
+import { Part1 } from './sections/part1'
+import { Part2 } from './sections/part2'
 import './index.css'
 
 const App = document.getElementById('root')
@@ -10,6 +11,7 @@ const Root: FC = () => {
     <>
       <Background></Background>
       <Part1 />
+      <Part2 />
     </>
   )
 }
