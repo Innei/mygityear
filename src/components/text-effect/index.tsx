@@ -7,23 +7,41 @@ interface TextEffectProps {
   suffix?: string
   pauseTime?: number
   repeat?: boolean
+
+  tag?: keyof JSX.IntrinsicElements
 }
-export const TextEffect: React.FC<TextEffectProps> = (props) => {
+export const TextEffect: React.FC<
+  TextEffectProps & JSX.IntrinsicElements['span']
+> = (props) => {
   const {
     pauseTime = 1000,
     suffix = '|',
-    textArray,
+    textArray: _textArray,
     textSpeed = 100,
     repeat = true,
+    tag = 'h1',
+    ...rest
   } = props
+
+  const textArray = React.useMemo(
+    () => _textArray.filter((text) => text.length > 0),
+    [_textArray],
+  )
+
   const [currentText, setCurrentText] = React.useState('')
   const currentTextIndex = React.useRef(0)
   const timer = React.useRef<number>()
   const animate = useCallback(() => {
     setCurrentText((currentText) => {
-      const currentFullText = textArray[currentTextIndex.current]
+      // Transform to array to solve emoji split into two characters
+      // @see: https://stackoverflow.com/questions/24531751/how-can-i-split-a-string-containing-emoji-into-an-array
+      const currentTextArray = Array.from(currentText)
+      const currentFullTextArray = Array.from(
+        textArray[currentTextIndex.current],
+      )
       let newText = ''
-      if (currentFullText.length === currentText.length) {
+
+      if (currentFullTextArray.length === currentTextArray.length) {
         newText = ''
         if (repeat) {
           currentTextIndex.current =
@@ -32,14 +50,14 @@ export const TextEffect: React.FC<TextEffectProps> = (props) => {
           const nextIndex = currentTextIndex.current + 1
           if (nextIndex === textArray.length) {
             currentTextIndex.current = nextIndex
-          } else return currentFullText
+          } else return currentFullTextArray.join('')
         }
         timer.current = setTimeout(animate, textSpeed)
       } else {
-        newText = currentText + currentFullText[currentText.length]
+        newText = currentText + currentFullTextArray[currentTextArray.length]
         timer.current = setTimeout(
           animate,
-          currentFullText.length - 1 === currentText.length
+          currentFullTextArray.length - 1 === currentTextArray.length
             ? pauseTime
             : textSpeed,
         )
@@ -57,10 +75,14 @@ export const TextEffect: React.FC<TextEffectProps> = (props) => {
   useEffect(() => {
     return () => clearTimeout(timer.current)
   }, [])
-  return (
-    <h1>
+  return React.createElement(
+    tag,
+    {
+      ...rest,
+    },
+    <>
       {currentText}
       <span className={`${styles['blink']} ${styles['cursor']}`}>{suffix}</span>
-    </h1>
+    </>,
   )
 }

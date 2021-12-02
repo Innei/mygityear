@@ -17,11 +17,15 @@ export const Part1 = () => {
   return (
     <section>
       <div
-        className="flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-sans
+        className="flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-mono
       text-3xl font-bold
       "
       >
-        <TextEffect textArray={mainTitleTextList} repeat></TextEffect>
+        <TextEffect
+          className="break-all"
+          textArray={mainTitleTextList}
+          repeat
+        ></TextEffect>
       </div>
     </section>
   )
