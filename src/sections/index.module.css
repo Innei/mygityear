@@ -31,3 +31,11 @@ section {
 
 .part2 {
 }
+
+.part3 {
+  :global {
+    .gap {
+      @apply pb-8;
+    }
+  }
+}

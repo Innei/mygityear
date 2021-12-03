@@ -22,7 +22,7 @@ export const Part2 = () => {
             我和我的代码，还有这一年。
           </h2>
           <hr className="dark:text-gray$-dark text-gray$-light w-full opacity-30" />
-          <p className="dark:text-gray$-dark text-base py-2 font-medium text-gray$-light">
+          <p className="dark:text-gray$-dark text-sm py-2 font-medium text-gray$-light">
             校检码: <code>0x0c</code>
           </p>
         </div>
