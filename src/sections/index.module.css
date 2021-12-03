@@ -19,7 +19,7 @@
 section {
   &:global {
     &.container {
-      @apply max-w-[800px] m-auto py-[20vh] flex flex-col items-center justify-center relative bg-bg-black;
+      @apply max-w-[800px] m-auto py-[20vh] flex flex-col items-center justify-center relative dark:bg-bg-black bg-white;
       @apply bg-clip-content overflow-hidden;
 
       & > div {
