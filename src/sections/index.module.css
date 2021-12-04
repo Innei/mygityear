@@ -19,11 +19,17 @@
 section {
   &:global {
     &.container {
-      @apply max-w-[800px] m-auto py-[20vh] flex flex-col items-center justify-center relative dark:bg-bg-black bg-white;
+      @apply max-w-[800px] m-auto py-[20vh] flex flex-col justify-center relative dark:bg-bg-black bg-white;
       @apply bg-clip-content overflow-hidden;
 
       & > div {
-        @apply px-4 pt-2 rounded-xl overflow-hidden;
+        @apply px-16 pt-2 rounded-xl overflow-hidden;
+      }
+
+      :global {
+        .gap {
+          @apply pb-8;
+        }
       }
     }
   }
@@ -33,9 +39,4 @@ section {
 }
 
 .part3 {
-  :global {
-    .gap {
-      @apply pb-8;
-    }
-  }
 }
