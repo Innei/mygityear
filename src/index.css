@@ -9,7 +9,7 @@ html,
 body {
   font-family: SF Pro Rounded, PingFang SC, -apple-system, sans-serif;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 2.25rem;
   @apply text-black dark:text-white bg-white dark:bg-bg-black;
 }
 
