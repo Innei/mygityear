@@ -15,7 +15,7 @@ const Root: FC = () => {
           .sort(([a_name], [b_name]) => {
             const index = /part(\d+)\.tsx/
 
-            return +a_name.match(index)?.at(1)! - +b_name.match(index)?.at(1)!
+            return +a_name.match(index)![1]! - +b_name.match(index)![1]!
           })
           .map(([_, fc]) => fc()),
       )

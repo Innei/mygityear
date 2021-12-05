@@ -1,10 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2017",
     "lib": [
       "DOM",
       "DOM.Iterable",
-      "ESNext"
+      "ESNext",
+      "ES2021",
+      "ES2020",
+      "es2015",
+      "ES2018.Regexp",
     ],
     "allowJs": false,
     "skipLibCheck": false,
