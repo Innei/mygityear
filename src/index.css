@@ -28,3 +28,7 @@ body {
   border: 3px solid transparent;
   border-radius: 5px;
 }
+
+hr {
+  transform: scaleY(0.5);
+}

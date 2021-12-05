@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 import React, { FC, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { Background } from './components/background'
@@ -10,7 +11,13 @@ const Root: FC = () => {
   useEffect(() => {
     ;(async () => {
       const modules = await Promise.all(
-        Object.values(parts).map((promise) => promise()),
+        Object.entries(parts)
+          .sort(([a_name], [b_name]) => {
+            const index = /part(\d+)\.tsx/
+
+            return +a_name.match(index)?.at(1)! - +b_name.match(index)?.at(1)!
+          })
+          .map(([_, fc]) => fc()),
       )
       const fc = [] as any
       modules.forEach((mo) => {
