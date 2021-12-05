@@ -3,6 +3,7 @@ import React, { FC, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { Background } from './components/background'
 import './index.css'
+
 const parts = import.meta.glob('./sections/*.tsx')
 
 const App = document.getElementById('root')
@@ -30,7 +31,7 @@ const Root: FC = () => {
     <>
       <Background></Background>
 
-      {FCGroup.map((fc) => React.createElement(fc, { key: fc.name }))}
+      {FCGroup.map((fc) => React.createElement<any>(fc, { key: fc.name }))}
     </>
   )
 }

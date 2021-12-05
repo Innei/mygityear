@@ -1,5 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
+import { BigNumber } from '../components/big-number'
+import { Container } from '../components/container'
 import styles from './index.module.css'
 
 export const Part5: React.FC = () => {
@@ -9,7 +11,7 @@ export const Part5: React.FC = () => {
   const averageCommitPerWeekday = 4.111
   const weekendCommitCount = 42
   return (
-    <section className={clsx('container', styles['part5'])}>
+    <Container className={clsx('container', styles['part5'])}>
       <div className="font-medium leading-9">
         <div className="text-3xl text-yellow-400">{commitDateInDay}</div>
         <p className="mt-2">
@@ -22,16 +24,18 @@ export const Part5: React.FC = () => {
 
         <p>
           平均而言，我一天提交代码{' '}
-          <span className="text-3xl text-blue-400">
-            {averageCommitPerDay.toFixed(4)}
-          </span>{' '}
+          <BigNumber
+            num={averageCommitPerDay}
+            className="text-3xl text-blue-400"
+          ></BigNumber>{' '}
           次。
         </p>
         <p>
           如果不计算周末的日子，则是{' '}
-          <span className="text-3xl text-blue-400">
-            {averageCommitPerWeekday.toFixed(4)}
-          </span>{' '}
+          <BigNumber
+            num={averageCommitPerWeekday}
+            className="text-3xl text-blue-400"
+          ></BigNumber>{' '}
           次。
         </p>
         <p className="">
@@ -67,6 +71,6 @@ export const Part5: React.FC = () => {
           </>
         )}
       </div>
-    </section>
+    </Container>
   )
 }

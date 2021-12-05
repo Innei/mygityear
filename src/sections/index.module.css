@@ -1,4 +1,6 @@
 .part1 {
+  @apply !bg-transparent !p-0;
+
   & .arrow-down {
     animation: float 3s infinite ease-in-out;
   }
@@ -13,25 +15,6 @@
   }
   to {
     transform: translateY(0);
-  }
-}
-
-section {
-  &:global {
-    &.container {
-      @apply max-w-[800px] m-auto py-[20vh] flex flex-col justify-center relative dark:bg-bg-black bg-white;
-      @apply bg-clip-content overflow-hidden;
-
-      & > div {
-        @apply px-16 pt-2 rounded-xl overflow-hidden;
-      }
-
-      :global {
-        .gap {
-          @apply pb-8;
-        }
-      }
-    }
   }
 }
 

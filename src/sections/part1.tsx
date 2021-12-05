@@ -1,6 +1,8 @@
 import clsx from 'clsx'
 import { shuffle } from 'lodash-es'
 import React from 'react'
+import { BigNumber } from '../components/big-number'
+import { Container } from '../components/container'
 import { IcBaselineKeyboardArrowDown } from '../components/icons/arrow-down'
 import { TextEffect } from '../components/text-effect'
 import styles from './index.module.css'
@@ -18,10 +20,10 @@ const mainTitleTextList = ['我和我的代码，还有这一年。'].concat(
 )
 export const Part1 = () => {
   return (
-    <section className={styles['part1']}>
+    <Container className={styles['part1']}>
       <div
         className="flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-mono
-      text-3xl font-bold
+      text-3xl font-bold !p-0
       "
       >
         <TextEffect
@@ -39,6 +41,6 @@ export const Part1 = () => {
       >
         <IcBaselineKeyboardArrowDown className={styles['arrow-down']} />
       </div>
-    </section>
+    </Container>
   )
 }

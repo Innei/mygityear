@@ -1,12 +1,13 @@
 import clsx from 'clsx'
 import React from 'react'
 import { CodeTiles } from '../components/code-tiles'
+import { Container } from '../components/container'
 import { BiGit } from '../components/icons/git'
 import styles from './index.module.css'
 
 export const Part2 = () => {
   return (
-    <section className={clsx(styles['part2'], 'container')}>
+    <Container className={clsx(styles['part2'], 'container')}>
       <div className="w-full space-x-6 flex items-center relative">
         <BiGit
           className={
@@ -27,6 +28,6 @@ export const Part2 = () => {
           </p>
         </div>
       </div>
-    </section>
+    </Container>
   )
 }

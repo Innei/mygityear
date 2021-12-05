@@ -2,13 +2,15 @@ import clsx from 'clsx'
 import React from 'react'
 import styles from './index.module.css'
 import * as WeatherIcons from '../components/icons/weather'
+import { Container } from '../components/container'
+import { BigNumber } from '../components/big-number'
 
 export const Part8: React.FC = () => {
   const specialMonth = 1
   const specialDay = 1
   const specialCount = 10
   return (
-    <section className={clsx('container', styles['part8'], 'font-medium')}>
+    <Container className={clsx('container', styles['part8'], 'font-medium')}>
       <div>
         <div>
           <span className="text-3xl text-purple-400">{specialMonth}</span> 月{' '}
@@ -25,10 +27,13 @@ export const Part8: React.FC = () => {
         <div className="gap"></div>
         <p>
           在这短短的一天里，你一共提交了{' '}
-          <span className="text-3xl text-yellow-400">{specialCount}</span>{' '}
+          <BigNumber
+            className="text-3xl text-yellow-400"
+            num={specialCount}
+          ></BigNumber>{' '}
           次代码。
         </p>
       </div>
-    </section>
+    </Container>
   )
 }

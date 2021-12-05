@@ -1,5 +1,7 @@
 import clsx from 'clsx'
 import React, { useMemo } from 'react'
+import { BigNumber } from '../components/big-number'
+import { Container } from '../components/container'
 import styles from './index.module.css'
 export const Part3: React.FC = () => {
   const year = 2021
@@ -61,7 +63,7 @@ export const Part3: React.FC = () => {
     }
   }, [totalCommit, totalCommitDay])
   return (
-    <section className={clsx('container', styles['part3'])}>
+    <Container className={clsx('container', styles['part3'])}>
       <div className="font-medium leading-6">
         <small className="text-sm">在 {year} 年</small>
         <br />
@@ -88,10 +90,10 @@ export const Part3: React.FC = () => {
         <div className="gap"></div>
         {makeSummaryView}
       </div>
-    </section>
+    </Container>
   )
 }
 
 const makeBigNumber = (num: number) => {
-  return <span className={'text-2xl text-blue-500'}>{num}</span>
+  return <BigNumber num={num}></BigNumber>
 }

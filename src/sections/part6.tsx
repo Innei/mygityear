@@ -1,5 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
+import { BigNumber } from '../components/big-number'
+import { Container } from '../components/container'
 import styles from './index.module.css'
 
 export const Part6: React.FC = () => {
@@ -19,14 +21,14 @@ export const Part6: React.FC = () => {
     'chore',
   ]
   return (
-    <section className={clsx('container', 'font-medium', styles['part6'])}>
+    <Container className={clsx('container', 'font-medium', styles['part6'])}>
       <div>
         {mostUsedWordInCodeCount > 0 && (
           <>
             <div className="text-3xl text-yellow-400">{mostUsedWordInCode}</div>
             <p>
               这是我在代码中最常写到的单词，他出现了{' '}
-              {mostUsedWordInCodeCount.toLocaleString()} 次。
+              <BigNumber num={mostUsedWordInCodeCount} /> 次。
             </p>
           </>
         )}
@@ -37,7 +39,7 @@ export const Part6: React.FC = () => {
             </div>
             <p>
               这是我在代码中最常写到的单词，他出现了{' '}
-              {mostUsedWordInCommitLogCount.toLocaleString()} 次。
+              <BigNumber num={mostUsedWordInCommitLogCount} /> 次。
             </p>
           </>
         )}
@@ -62,6 +64,6 @@ export const Part6: React.FC = () => {
         <div className="gap"></div>
         <p>我会写很多很多的单词，很多很多的句子。</p>
       </div>
-    </section>
+    </Container>
   )
 }

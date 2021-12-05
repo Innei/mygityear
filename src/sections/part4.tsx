@@ -1,5 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
+import { BigNumber } from '../components/big-number'
+import { Container } from '../components/container'
 import styles from './index.module.css'
 
 export const Part4: React.FC = () => {
@@ -7,7 +9,7 @@ export const Part4: React.FC = () => {
   const otherUsedLanguages = ['swift', 'java', 'c++']
   const howManyLine = 162111
   return (
-    <section className={clsx(styles['part4'], 'font-medium container')}>
+    <Container className={clsx(styles['part4'], 'font-medium container')}>
       <div>
         <p className="text-3xl font-medium">
           {mostUsedLanguage ?? '我不知道你写了什么'}
@@ -24,9 +26,10 @@ export const Part4: React.FC = () => {
         <p>
           <span>
             在这一年里，我使用这门语言提交了{' '}
-            <span className="text-3xl text-yellow-400">
-              {howManyLine.toLocaleString()}{' '}
-            </span>
+            <BigNumber
+              className="text-3xl text-yellow-400"
+              num={howManyLine}
+            ></BigNumber>{' '}
             行代码。
           </span>
 
@@ -60,6 +63,6 @@ export const Part4: React.FC = () => {
           </>
         )}
       </div>
-    </section>
+    </Container>
   )
 }

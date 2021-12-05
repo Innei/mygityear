@@ -1,14 +1,20 @@
 import clsx from 'clsx'
 import React from 'react'
+import { BigNumber } from '../components/big-number'
+import { Container } from '../components/container'
 import styles from './index.module.css'
 
 export const Part7: React.FC = () => {
   const emptyLineCount = 33333
   return (
-    <section className={clsx(styles['part7'], 'container font-medium')}>
+    <Container className={clsx(styles['part7'], 'container font-medium')}>
       <div>
         <div>
-          <span className="text-3xl text-red-500">{emptyLineCount}</span> 行
+          <BigNumber
+            num={emptyLineCount}
+            className="text-3xl text-red-500"
+          ></BigNumber>{' '}
+          行
         </div>
         <p>
           这是我今年写的空行的数量。空行，没错，就是只有空格或者什么都没有的那一行。
@@ -29,6 +35,6 @@ export const Part7: React.FC = () => {
           })()}
         </p>
       </div>
-    </section>
+    </Container>
   )
 }

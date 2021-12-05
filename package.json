@@ -23,10 +23,16 @@
     ]
   },
   "dependencies": {
+    "@react-spring/parallax": "9.3.1",
     "clsx": "1.1.1",
     "lodash-es": "4.17.21",
+    "rc-queue-anim": "2.0.0",
+    "rc-scroll-anim": "2.7.6",
+    "rc-tween-one": "3.0.3",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-intersection-observer": "8.32.5",
+    "react-spring": "9.3.2"
   },
   "devDependencies": {
     "@innei-util/eslint-config-react-ts": "^0.1.2",

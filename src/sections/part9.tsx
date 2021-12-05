@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import React from 'react'
+import { Container } from '../components/container'
 import styles from './index.module.css'
 
 export const Part9: React.FC = () => {
@@ -7,7 +8,7 @@ export const Part9: React.FC = () => {
     { name: '我不知道你来噶什么', describe: '挺奇怪的' },
   ]
   return (
-    <section className={clsx('container', styles['part9'], 'font-medium')}>
+    <Container className={clsx('container', styles['part9'], 'font-medium')}>
       <div>
         <div className="text-3xl text-green-400">成就墙</div>
         <div className="gap"></div>
@@ -25,6 +26,6 @@ export const Part9: React.FC = () => {
           ))}
         </ul>
       </div>
-    </section>
+    </Container>
   )
 }

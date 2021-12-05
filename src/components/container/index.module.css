@@ -1,0 +1,18 @@
+section {
+  &:global {
+    &.container {
+      @apply max-w-[800px] m-auto py-[20vh] flex flex-col justify-center relative dark:bg-bg-black bg-white;
+      @apply bg-clip-content overflow-hidden;
+
+      & > div {
+        @apply px-16 py-8 rounded-xl overflow-auto;
+      }
+
+      :global {
+        .gap {
+          @apply pb-8;
+        }
+      }
+    }
+  }
+}
