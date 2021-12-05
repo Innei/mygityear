@@ -28,7 +28,7 @@ export const Part1 = () => {
           className="break-all"
           textArray={mainTitleTextList}
           repeat
-          pause={import.meta.env.DEV}
+          // pause={import.meta.env.DEV}
         ></TextEffect>
       </div>
 

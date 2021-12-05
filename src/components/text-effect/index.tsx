@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { memo, useCallback, useEffect } from 'react'
 import styles from './index.module.css'
 
 interface TextEffectProps {
@@ -12,7 +12,7 @@ interface TextEffectProps {
 }
 export const TextEffect: React.FC<
   TextEffectProps & JSX.IntrinsicElements['span']
-> = (props) => {
+> = memo((props) => {
   const {
     pauseTime = 1000,
     suffix = '|',
@@ -32,16 +32,22 @@ export const TextEffect: React.FC<
   const [currentText, setCurrentText] = React.useState('')
   const currentTextIndex = React.useRef(0)
   const timer = React.useRef<any>()
+  const isAnimate = React.useRef(!pause)
+
   useEffect(() => {
     if (pause) {
       timer.current = clearTimeout(timer.current)
     } else {
+      if (isAnimate.current) {
+        return
+      }
       animate()
     }
   }, [pause])
 
   const animate = useCallback(() => {
     setCurrentText((currentText) => {
+      isAnimate.current = false
       // Transform to array to solve emoji split into two characters
       // @see: https://stackoverflow.com/questions/24531751/how-can-i-split-a-string-containing-emoji-into-an-array
       const currentTextArray = Array.from(currentText)
@@ -61,9 +67,11 @@ export const TextEffect: React.FC<
             currentTextIndex.current = nextIndex
           } else return currentFullTextArray.join('')
         }
+        isAnimate.current = true
         timer.current = setTimeout(animate, textSpeed)
       } else {
         newText = currentText + currentFullTextArray[currentTextArray.length]
+        isAnimate.current = true
         timer.current = setTimeout(
           animate,
           currentFullTextArray.length - 1 === currentTextArray.length
@@ -100,4 +108,4 @@ export const TextEffect: React.FC<
       <span className={`${styles['blink']} ${styles['cursor']}`}>{suffix}</span>
     </>,
   )
-}
+})
