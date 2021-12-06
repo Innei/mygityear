@@ -1,14 +1,16 @@
 import clsx from 'clsx'
+
 import React from 'react'
 import { BigNumber } from '../components/big-number'
 import { Container } from '../components/container'
+import { QueueAnim } from '../components/queue-anim'
 import styles from './index.module.css'
 
 export const Part7: React.FC = () => {
   const emptyLineCount = 33333
   return (
     <Container className={clsx(styles['part7'], 'container font-medium')}>
-      <div>
+      <QueueAnim>
         <div>
           <BigNumber
             num={emptyLineCount}
@@ -34,7 +36,7 @@ export const Part7: React.FC = () => {
             }
           })()}
         </p>
-      </div>
+      </QueueAnim>
     </Container>
   )
 }

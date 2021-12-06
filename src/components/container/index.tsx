@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import RcQueueAnim from 'rc-queue-anim'
-import ScrollOverPack from 'rc-scroll-anim/lib/ScrollOverPack'
+import { OverPack } from 'rc-scroll-anim'
 import TweenOne from 'rc-tween-one'
 import React from 'react'
 import styles from './index.module.css'
@@ -11,10 +11,9 @@ export const Container: React.FC<JSX.IntrinsicElements['section']> = (
   const { className, ...rest } = props
 
   return (
-    <ScrollOverPack playScale={0.3}>
+    <OverPack>
       <TweenOne
         animation={{ y: 0, opacity: 1 }}
-        key={Math.random().toString(16).slice(2, 6)}
         style={{ transform: 'translateY(100px)', opacity: 0 }}
       >
         <RcQueueAnim type={'bottom'}>
@@ -26,6 +25,6 @@ export const Container: React.FC<JSX.IntrinsicElements['section']> = (
           </section>
         </RcQueueAnim>
       </TweenOne>
-    </ScrollOverPack>
+    </OverPack>
   )
 }

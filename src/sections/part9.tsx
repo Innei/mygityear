@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
 import { Container } from '../components/container'
+import { QueueAnim } from '../components/queue-anim'
 import styles from './index.module.css'
 
 export const Part9: React.FC = () => {
@@ -9,7 +10,7 @@ export const Part9: React.FC = () => {
   ]
   return (
     <Container className={clsx('container', styles['part9'], 'font-medium')}>
-      <div>
+      <QueueAnim>
         <div className="text-3xl text-green-400">成就墙</div>
         <div className="gap"></div>
         <p>今年，我获得了不少成就。下面是我愿意和你分享的一些。</p>
@@ -25,7 +26,7 @@ export const Part9: React.FC = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </QueueAnim>
     </Container>
   )
 }

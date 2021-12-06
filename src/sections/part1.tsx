@@ -1,7 +1,6 @@
 import clsx from 'clsx'
 import { shuffle } from 'lodash-es'
 import React from 'react'
-import { BigNumber } from '../components/big-number'
 import { Container } from '../components/container'
 import { IcBaselineKeyboardArrowDown } from '../components/icons/arrow-down'
 import { TextEffect } from '../components/text-effect'

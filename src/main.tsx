@@ -3,7 +3,7 @@ import React, { FC, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { Background } from './components/background'
 import './index.css'
-
+import 'rc-texty/assets/index.css'
 const parts = import.meta.glob('./sections/*.tsx')
 
 const App = document.getElementById('root')

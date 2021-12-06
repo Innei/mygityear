@@ -18,6 +18,7 @@ specifiers:
   prettier: 2.4.0
   rc-queue-anim: 2.0.0
   rc-scroll-anim: 2.7.6
+  rc-texty: 0.2.0
   rc-tween-one: 3.0.3
   react: 17.0.2
   react-dom: 17.0.2
@@ -35,6 +36,7 @@ dependencies:
   lodash-es: 4.17.21
   rc-queue-anim: 2.0.0_react-dom@17.0.2+react@17.0.2
   rc-scroll-anim: 2.7.6
+  rc-texty: 0.2.0
   rc-tween-one: 3.0.3_react-dom@17.0.2+react@17.0.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -974,6 +976,10 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /classnames/2.3.1:
+    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
+    dev: false
 
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
@@ -2601,6 +2607,15 @@ packages:
       rc-tween-one: 2.7.3
       react-lifecycles-compat: 3.0.4
       tween-functions: 1.2.0
+    dev: false
+
+  /rc-texty/0.2.0:
+    resolution: {integrity: sha512-hGaXs8ZsSL/m7LEuCySxLWZtmFJ7bwldgtH5V90v6uBfy5eTLxSVLK5TpS2DPQHZrjl4sHXjRbKsCDk6v9x29A==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      babel-runtime: 6.26.0
+      classnames: 2.3.1
+      rc-tween-one: 2.7.3
     dev: false
 
   /rc-tween-one/2.7.3:
