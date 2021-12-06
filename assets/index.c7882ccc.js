@@ -1,0 +1,1 @@
+import{Q as e}from"./index.module.ec1a8288.js";import{r,R as t}from"./vendor.9a8bf476.js";const o=o=>{const n=r.exports.useRef(0),s=t.Children.map(o.children,(e=>t.cloneElement(e,{key:n.current++})));return t.createElement(e,{type:"bottom"},s)};export{o as Q};
