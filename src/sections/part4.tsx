@@ -1,8 +1,8 @@
 import clsx from 'clsx'
-import RcQueueAnim from 'rc-queue-anim'
 import React from 'react'
 import { BigNumber } from '../components/big-number'
 import { Container } from '../components/container'
+import { QueueAnim } from '../components/queue-anim'
 import styles from './index.module.css'
 
 export const Part4: React.FC = () => {
@@ -11,7 +11,7 @@ export const Part4: React.FC = () => {
   const howManyLine = 162111
   return (
     <Container className={clsx(styles['part4'], 'font-medium container')}>
-      <RcQueueAnim type="bottom">
+      <QueueAnim>
         <p key="1" className="text-3xl font-medium">
           {mostUsedLanguage ?? '我不知道你写了什么'}
         </p>
@@ -63,7 +63,7 @@ export const Part4: React.FC = () => {
             <p key="5">语言大师的称号，非你莫属！</p>
           </>
         )}
-      </RcQueueAnim>
+      </QueueAnim>
     </Container>
   )
 }

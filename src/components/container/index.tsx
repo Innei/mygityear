@@ -16,7 +16,7 @@ export const Container: React.FC<JSX.IntrinsicElements['section']> = (
         animation={{ y: 0, opacity: 1 }}
         style={{ transform: 'translateY(100px)', opacity: 0 }}
       >
-        <RcQueueAnim type={'bottom'}>
+        <RcQueueAnim type={'bottom'} forcedReplay leaveReverse>
           <section
             className={clsx('container font-medium', styles['root'], className)}
             {...rest}

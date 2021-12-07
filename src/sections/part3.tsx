@@ -66,7 +66,12 @@ export const Part3: React.FC = () => {
   }, [totalCommit, totalCommitDay])
   return (
     <Container className={clsx('container', styles['part3'])}>
-      <RcQueueAnim type="bottom" className="font-medium leading-6">
+      <RcQueueAnim
+        type="bottom"
+        leaveReverse
+        forcedReplay
+        className="font-medium leading-6"
+      >
         <small className="text-sm" key="1">
           在 {year} 年
         </small>

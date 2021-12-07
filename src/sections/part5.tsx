@@ -13,7 +13,12 @@ export const Part5: React.FC = () => {
   const weekendCommitCount = 42
   return (
     <Container className={clsx('container', styles['part5'])}>
-      <RcQueueAnim type="bottom" className="font-medium leading-9">
+      <RcQueueAnim
+        type="bottom"
+        forcedReplay
+        leaveReverse
+        className="font-medium leading-9"
+      >
         <div key="1" className="text-3xl text-yellow-400">
           {commitDateInDay}
         </div>
