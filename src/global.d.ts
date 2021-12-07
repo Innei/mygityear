@@ -3,4 +3,5 @@ declare global {
     foo: number
   }
 }
+
 export {}

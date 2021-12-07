@@ -9,8 +9,8 @@ const size = 10
 const gap = 5
 const day = 364
 const rowCount = 14
-const width = rowCount * size + (rowCount - 1) * gap
-const height = size * (day / rowCount) + (day / rowCount - 1) * gap
+const width = rowCount * size + rowCount * gap
+const height = size * (day / rowCount) + (day / rowCount) * gap
 
 const levelMatrix = range(day).map(() => Math.floor(Math.random() * 3))
 export const CodeTiles: React.FC = () => {
@@ -33,7 +33,7 @@ export const CodeTiles: React.FC = () => {
     const $rects = $svg.querySelectorAll('rect')
     let doneCount = 0
     $rects.forEach(($el) => {
-      const delay = +$el.getAttribute('data-delay')! * 1000
+      const delay = +$el.getAttribute('data-delay')! * 100
       $el.animate([{ opacity: 0 }, { opacity: 1 }], {
         duration: 500,
         delay,
@@ -55,7 +55,7 @@ export const CodeTiles: React.FC = () => {
             return (
               <rect
                 style={{ opacity: 0 }}
-                data-delay={getRandomArbitrary(0.25, 0.75)}
+                data-delay={i % rowCount}
                 key={i}
                 width="11"
                 height="11"
