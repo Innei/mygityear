@@ -1,21 +1,12 @@
-# Vite React Tailwind Template
+# My year with git
 
-This template provide toolchain below:
+Web 端报告
 
-- Vite
-- React, ReactDOM
-- ESLint
-- Prettier
-- Git Hook (Husky, Lint Staged)
-- TailwindCSS 2 (JIT)
+UI (mock data): <https://innei.github.io/mygityear/>
 
-# Usage
+TODO:
 
-```sh
-pnpm i
-pnpm dev
-```
+- [x] UI/UX
+- [ ] data layer (block)
 
-# Screenshot
-
-![](https://i.imgur.com/ftvsXYB.png)
+关联项目: [myyearwithgit](https://github.com/Co2333/myyearwithgit)
